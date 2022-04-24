@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/cv-front",
+  "sourceRoot": "apps/cv-front/src",
+  "prefix": "cv-page",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/cv-front",
+        "index": "apps/cv-front/src/index.html",
+        "main": "apps/cv-front/src/main.ts",
+        "polyfills": "apps/cv-front/src/polyfills.ts",
+        "tsConfig": "apps/cv-front/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/cv-front/src/favicon.ico", "apps/cv-front/src/assets"],
+        "styles": [
+          "apps/cv-front/src/styles.scss",
+          "node_modules/@nebular/theme/styles/prebuilt/dark.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/cv-front/src/environments/environment.ts",
+              "with": "apps/cv-front/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "cv-front:build:production"
+        },
+        "development": {
+          "browserTarget": "cv-front:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "cv-front:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/cv-front/src/**/*.ts",
+          "apps/cv-front/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/cv-front"],
+      "options": {
+        "jestConfig": "apps/cv-front/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

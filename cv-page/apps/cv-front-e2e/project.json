@@ -1,0 +1,28 @@
+{
+  "root": "apps/cv-front-e2e",
+  "sourceRoot": "apps/cv-front-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/cv-front-e2e/cypress.json",
+        "devServerTarget": "cv-front:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "cv-front:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/cv-front-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["cv-front"]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "cv-front": "apps/cv-front",
+    "cv-front-e2e": "apps/cv-front-e2e"
+  }
+}

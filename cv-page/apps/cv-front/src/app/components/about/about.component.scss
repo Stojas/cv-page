@@ -1,0 +1,14 @@
+.about {
+  * {
+    font-family: 'Anton', sans-serif;
+    box-sizing: border-box;
+  }
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  position: relative;
+  &__img {
+
+  }
+}

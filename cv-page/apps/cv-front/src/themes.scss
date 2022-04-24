@@ -1,0 +1,38 @@
+@forward '@nebular/theme/styles/theming';
+@use '@nebular/theme/styles/theming' as *;
+@use '@nebular/theme/styles/themes/dark';
+
+$nb-themes: nb-register-theme((
+  color-primary-100: #f2fcff,
+  color-primary-200: #e6f9ff,
+  color-primary-300: #cff3ff,
+  color-primary-400: #b8edff,
+  color-primary-500: #91e3ff,
+  color-primary-600: #78ddff,
+  color-primary-700: #57d5ff,
+  color-primary-800: #30cbff,
+  color-primary-900: #008fbf,
+  color-basic-100: white,
+  color-basic-200: #eefafc,
+  color-basic-300: #d6d6d6,
+  color-basic-400: #343434,
+  color-basic-500: #343434,
+  color-basic-600: #343434,
+  color-basic-700: #1c1c1c,
+  color-basic-800: #1c1c1c,
+  color-basic-900: #1c1c1c,
+  color-basic-1000: #1c1c1c,
+  color-basic-1100: #1c1c1c,
+  background-basic-color-1: color-basic-700,
+  background-basic-color-2: color-basic-800,
+  background-basic-color-3: color-basic-900,
+  background-basic-color-4: color-basic-100,
+  border-basic-color-1: color-basic-700,
+  border-basic-color-2: color-basic-800,
+  border-basic-color-3: color-basic-900,
+  border-basic-color-4: color-basic-1000,
+  border-basic-color-5: color-basic-1100,
+  shadow: 0 0.5rem 1rem 0 rgba(25, 30, 51, 0.24),
+  text-disabled-color: color-basic-300,
+
+), own, dark);
