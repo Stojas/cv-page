@@ -1,0 +1,39 @@
+@import '../../../_styles/mixins';
+@import '../../../_styles/colors';
+
+.projects {
+  width: 100%;
+  min-height: 500px;
+  padding: 20px;
+  background-color: #000;
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  &__tile {
+    flex-basis: max(8vw, 300px);
+    height: max(8vw, 300px);
+    background-color: $tiles_color;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .content {
+      width: 100%;
+      transition: 0.5s;
+      height: 100%;
+      &:hover {
+        transform: scale(1.05);
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

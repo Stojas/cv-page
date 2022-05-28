@@ -1,14 +1,65 @@
+@import '../../../_styles/mixins';
+@import '../../../_styles/colors';
+
 .about {
+  width: 100%;
+  min-height: 500px;
+  padding: 20px 20px 10px;
+  background-color: #000;
+  position: relative;
+  transition: all 0.5s;
+
   * {
     font-family: 'Anton', sans-serif;
     box-sizing: border-box;
   }
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  position: relative;
-  &__img {
 
+  a {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .wow {
+    color: #e3d20e;
+    padding: 5px;
+    position: relative;
+  }
+
+  .yellow {
+    color: #e3d20e;
+    text-decoration: none;
+    transition: 0.5s all;
+    &:hover {
+      font-size: 25px;
+    }
+    &--big {
+      color: #e3d20e;
+      text-decoration: none;
+      transition: 0.5s all;
+      &:hover {
+        font-size: 35px;
+      }
+    }
+  }
+
+  .separator {
+    width: 100%;
+    overflow: hidden;
+    &__element {
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(0.25turn, #000, $main_color);
+      border-radius: 1px 1px 0 0;
+      animation-name: separate;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes separate {
+    0% {transform: translateX(-100px);}
+    100% {transform: translateX(100vw);}
   }
 }

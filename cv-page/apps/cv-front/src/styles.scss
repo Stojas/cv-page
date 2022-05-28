@@ -6,3 +6,24 @@
   @include nb-theme-global();
 };
 /* You can add global styles to this file, and also import other style files */
+@import './_styles/colors';
+@import './_styles/mixins';
+
+.highlight {  
+  position: absolute;
+  &::after{
+    @include stack-element($main_color);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: start;
+}

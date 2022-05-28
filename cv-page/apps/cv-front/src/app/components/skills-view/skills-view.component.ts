@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'cv-page-skills-view',
@@ -7,7 +7,8 @@ import { Component, HostListener, ViewChild, Renderer2 } from '@angular/core';
 })
 export class SkillsViewComponent {
 
-
-  constructor(private _renderer: Renderer2) {}
-
+  public onScrollDown(): void {
+    const pageHeight = window.innerHeight;
+    window.scrollBy({ left: 0, top:  pageHeight, behavior : "smooth" });
+  }
 }

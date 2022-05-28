@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
-
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent],
   imports: [BrowserModule,
     NbThemeModule.forRoot(),
     BrowserAnimationsModule,
